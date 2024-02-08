@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="static/assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="static/assets/img/PVG_1.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Create Resume</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Summary & Profile</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Project & Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills & Achievement</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <form method="POST" class="post-form" action="{% url 'create' %}">
+        {% csrf_token %}
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Enter Details</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Name</label><input type="text" id="pname" name="pname" class="form-control" placeholder="first name" ></div>
+                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" id="psurname" name="psurname" class="form-control" value="" placeholder="surname"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" id="pcontact" name="pcontact" class="form-control" placeholder="enter phone number" value=""></div>
+
+                    <div class="col-md-12"><label class="labels">Email</label><input type="email" id="pemail" name="pemail" class="form-control" placeholder="enter Email" value=""></div>
+
+                    <div class="col-md-12"><label class="labels">Skills</label><input type="text" id="pskills1" name="pskills1" class="form-control" placeholder="Enter Skills" value=""></div>
+                    <div class="col-md-12"><label class="labels">Skills</label><input type="text" id="pskills2" name="pskills2" class="form-control" placeholder="Enter Skills" value=""></div>
+                    <div class="col-md-12"><label class="labels">Skills</label><input type="text" id="pskills3" name="pskills3" class="form-control" placeholder="Enter Skills" value=""></div>
+
+
+                    <div class="col-md-12"><label class="labels">Projects</label><input type="text" id="pproject" name="pproject" class="form-control" placeholder="Enter Projects" value=""></div>
+                    <div class="col-md-12"><label class="labels">Enter Acheivements</label><input type="text" id="pachieve" name="pachieve" class="form-control" placeholder="enter Achievements" value=""></div>
+                    <div class="col-md-12"><label class="labels">Enter Summary</label><textarea class="form-control" id="psummary" name="psummary" placeholder="enter Achievements" value=""></textarea></div>
+                </div>
+
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" id="pexp" name="pexp" class="form-control" placeholder="experience" value=""></div> <br>
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" id="pexpdetails" name="pexpdetails" class="form-control" placeholder="additional details" value=""></div><br>
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Eduction</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Education</span></div><br>
+                 <div class="col-md-12"><label class="labels">University 1</label><input type="text" id="punv1" name="punv1" class="form-control" placeholder="Enter University" value=""></div>
+                 <div class="col-md-12"><label class="labels">Course 1</label><input type="text" id="pco1" name="pco1" class="form-control" placeholder="Enter Course" value=""></div>
+                <div class="col-md-12"><label class="labels">CGPA</label><input type="text" id="pcgpa1" name="pcgpa1" class="form-control" placeholder="CGPA" value=""></div>
+                 <div class="col-md-12"><label class="labels">University 2</label><input type="text" id="punv2" name="punv2" class="form-control" placeholder="Enter University" value=""></div>
+                 <div class="col-md-12"><label class="labels">Course 2</label><input type="text" id="pco2" name="pco2"  class="form-control" placeholder="Enter Course" value=""></div>
+                <div class="col-md-12"><label class="labels">CGPA</label><input type="text" id="pcgpa2" name="pcgpa2" class="form-control" placeholder="CGPA" value=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+                </div>
+            </section>
+        </form>
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            {% for i in details %}
+                            <h3 class="mb-0">{{i.pexp}}</h3>
+                            <div class="subheading mb-3"></div>
+                            <p>{{i.pexpdetails}}</p>
+
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
+                    </div>
+                     <h2 class="mb-5">Project Name:-</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">{{i.pproject}}</h3>
+                            <div class="subheading mb-3">Technology Used</div>
+                             <div class="subheading mb-3">Programming Languages & Tools</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-angular"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-sass"></i></li>
+
+                    </ul>
+                       {% endfor %}
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2011 - March 2013</span></div>
+                    </div>
+                                  </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                       {% for i in details %}
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">{{i.punv1}}</h3>
+                            <div class="subheading mb-3">{{i.pco1}}</div
+                            <p>CGPA:-{{i.pcgpa1}}</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">{{i.punv2}}</h3>
+                            <div class="subheading mb-3">{{i.pco2}}</div>
+                            <p>CGPA:-{{i.pcgpa2}}</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
+                    </div>
+                </div>
+                 {% endfor %}
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                 {% for i in details %}
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Skills</h2>
+                    <div class="subheading mb-3"></div>
+                  <h3 class="mb-0">{{i.pskills1}}</h3><hr>
+                    <h3 class="mb-0">{{i.pskills2}}</h3><hr>
+                    <h3 class="mb-0">{{i.pskills3}}</h3><hr>
+                     <div class="resume-section-content">
+                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            {{i.pachieve}}
+                        </li>
+                         <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            Certification:-Full Stack Python
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                {% endfor %}
+            </section>
+            <hr class="m-0" />
+            <!-- Interests-->
+                      <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Profile Details</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            {% for i in details %}
+                            <p class="mb-0">Name:-{{i.pname}}  {{i.psurname}}</p><hr>
+                           <p class="mb-0">Email:-{{i.pemail}}</p><hr>
+                            <p class="mb-0">Contact no:-{{i.pcontact}}</p><hr>
+
+                        </div>
+
+                    </div>
+                     <h2 class="mb-5">Summary:-</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">{{i.psummary}}</h3>
+
+
+                       {% endfor %}
+                        </div>
+
+                    </div>
+                                  </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Awards-->
+
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+    </body>
+</html>
